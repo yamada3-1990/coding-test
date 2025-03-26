@@ -49,3 +49,36 @@ hex(0b10010) # '0x12'
 | 論理積 (AND) | 論理和 (OR) | 排他的論理和 (XOR) | 反転 (NOT) |
 |---|---|---|---|
 | \& | \| | ^ | ~ |
+
+## 配列
+対角線成分の和
+```
+    for i in range(n):
+        l2r += arr[i][i]
+        r2l += arr[i][n - 1 - i]
+```
+
+ソート
+昇順
+```
+sorted(A)
+sort(A) # A自体がソートされる
+```
+
+降順
+```
+sorted(A, reverse=True)
+sort(A, reverse=True) # A自体がソートされる
+```
+
+## 文字列
+
+全て小文字/大文字に変換
+```
+s = s.lower()
+s = s.Upper()
+```
+置き換え
+```
+s = s.replace(" ", "")
+```
