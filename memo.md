@@ -64,6 +64,26 @@ joinして出力
 " + ".join(s)
 ```
 
+二次元配列
+```
+# n個の空リストを持つ二次元配列
+# [[], [], [], ...]
+arr = [[] for _ in range(n)]
+
+# 2*3の配列
+a = [[0 for j in range(3)] for i in range(2)]
+
+# numpy
+import numpy as np
+arr = np.zeros((2, 3))
+
+# 列の数を取得
+cols = len(matrix[0]) 
+
+# 列を取得
+column = [row[1] for row in matrix]
+```
+
 ソート
 昇順
 ```
@@ -95,6 +115,12 @@ s = s.replace(" ", "")
 k %= 26 (シフトする文字数)
 if char.islower():
     shifted_char = chr(((ord(char) - ord('a') + k) % 26) + ord('a'))
+```
+
+# 各桁の和
+```
+n = "12345"
+result = sum(map(int, n)) # 15
 ```
 
 ## Tower Breakersについて
