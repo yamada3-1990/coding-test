@@ -179,3 +179,62 @@ if n & (n-1) == 0:
 while p * 2 <= n:
     p *= 2
 ```
+
+## リストノード
+単方向リスト(linked list)を逆順にする
+1 -> 2 -> 3 -> NULLの場合、while文中では、
+```
+res = None(NULL)
+-- 1回目
+curr = 1
+llist = 2
+curr.next = None (curr = 1 -> None)
+res = 1
+-- 2回目
+curr = 2
+llist = 3
+curr.next = 1 (curr = 2 -> 1 -> None)
+res = 2
+-- 3回目
+curr = 3
+llist = None
+curr.next = 3 (curr = 3 -> 2 -> 1 -> None)
+res = 3
+```
+```
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+
+def reverse(llist):
+    res = None
+    while llist:
+        curr = llist 
+        llist = llist.next
+        # 前に追加していく
+        curr.next = res 
+        res = curr
+    return res
+```  
+双方向リスト(linked list)を逆順にする
+```
+def reverse(llist):
+    # currはllistと同じノードを参照しているだけ
+    curr = llist
+    prev = None
+    
+    while curr:
+        # 一時的に次のノードを保持
+        next_node = curr.next
+        
+        # currの次のノードをひとつ前のノードに変更
+        curr.next = prev
+        # currの前のノードを次のノードに変更
+        curr.prev = next_node
+        
+
+        prev = curr
+        # currを更新
+        curr = next_node
+    return prev
+```
