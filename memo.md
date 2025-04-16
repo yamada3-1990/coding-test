@@ -1,6 +1,26 @@
 ## 解き方
 グリッド系の問題は、周期(パターン)を見つけ、周期ごとの状態を求める
 
+2sum問題
+-> 与えられた数値の配列（またはリスト）の中から、特定の合計値になる2つの数値の組み合わせを見つけ出す問題
+愚直にforループは時間的に厳しい
+ハッシュ値を用いる
+```
+def icecreamParlor(m, arr):
+    # 空のハッシュマップ seen を作成
+    seen = {}
+    for i, price in enumerate(arr):
+        # 目標金額 m との差額 complement = m - price を計算
+        complement = m - price
+        if complement in seen:
+        # 差額を埋めれるキーがある = 現在の金額と足してmにできる
+            return seen[complement] + 1, i + 1
+        # なかったら追加
+        seen[price] = i
+    # 解が見つからない場合は None を返す（問題の制約によっては不要）
+    return None 
+```
+
 ## dict
 各要素のキーと値に対してforループ処理
 ```
@@ -74,6 +94,16 @@ n & i == 0(XOR)
     for i in range(n):
         l2r += arr[i][i]
         r2l += arr[i][n - 1 - i]
+```
+
+同時にインデックスも取得
+```
+l = ['Alice', 'Bob', 'Charlie']
+for i, name in enumerate(l):
+    print(i, name)
+# 0 Alice
+# 1 Bob
+# 2 Charlie
 ```
 
 joinして出力
