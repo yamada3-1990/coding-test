@@ -86,6 +86,13 @@ n と i のビットごとのAND演算の結果が 0
 ↓
 n & i == 0(XOR)
 
+## キュー
+listで実現する場合は```append()```と```pop(0)```を利用
+```
+q = []
+q.appned(10) #enqueue
+q.pop(0) #dequeue
+```
 
 
 ## 配列
